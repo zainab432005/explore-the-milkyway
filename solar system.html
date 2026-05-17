@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="compare.html">Planets</a>
+        <a href="solar system.html">Solar System</a>
+    </nav>
+
+    <h1 class="main-title">THE SOLAR SYSTEM</h1>
+    
+    <div class="planets-grid">
+        <div class="planet-card" onclick="openInfo('The Sun','The center of the Solar System. A massive star made mostly of hydrogen and helium. Provides light and heat to all planets. Its gravity keeps the planets in orbit.')">
+            <img src="sun.jpeg" alt="Sun">
+            <h3>The Sun</h3>
+        </div>
+
+        <div class="planet-card" onclick="openInfo('Mercury', '57.9 million km', 'The closest planet to the Sun. The smallest planet in the Solar System. Has very extreme temperatures. Its surface is covered with craters. A year on Mercury is only 88 Earth days.')">
+            <img src="mercury.jpeg" alt="Mercury">
+            <h3>Mercury</h3>
+        </div>
+
+        <div class="planet-card" onclick="openInfo('Venus', '108.2 million km', 'The second planet from the Sun. Known as Earth’s twin because of its similar size. The hottest planet in the Solar System. Covered with thick toxic clouds. Rotates in the opposite direction of most planets.')">
+            <img src="venus.jpeg" alt="Venus">
+            <h3>Venus</h3>
+        </div>
+
+        <div class="planet-card" onclick="openInfo('Earth', '149.6 million km', 'The only known planet with life. Contains water and breathable air. About 71% of its surface is covered by water. Has one natural satellite: the Moon.')">
+            <img src="earth.jpeg" alt="Earth">
+            <h3>Earth</h3>
+        </div>
+
+        <div class="planet-card" onclick="openInfo('Mars', '227.9 million km', 'Called the Red Planet. Has the largest volcano in the Solar System. Scientists believe water once existed there. Has two small moons: Phobos and Deimos. One of the most studied planets for future human missions.')">
+            <img src="mars.jpeg" alt="Mars">
+            <h3>Mars</h3>
+        </div>
+
+        <div class="planet-card" onclick="openInfo('Jupiter', '778.5 million km', 'The largest planet in the Solar System. A gas giant made mostly of hydrogen and helium. Famous for the Great Red Spot, a giant storm. Has many moons, including Ganymede, the largest moon.')">
+            <img src="jupiter.jpeg" alt="Jupiter">
+            <h3>Jupiter</h3>
+        </div>
+
+        <div class="planet-card" onclick="openInfo('Saturn', '1.4 billion km', 'Best known for its beautiful rings. A gas giant like Jupiter. Has many moons, including Titan. Less dense than water.')">
+            <img src="Saturne.jpeg" alt="Saturn">
+            <h3>Saturn</h3>
+        </div>
+
+        <div class="planet-card" onclick="openInfo('Uranus', '2.9 billion km', 'An ice giant with a blue-green color. Rotates on its side. Very cold planet. Contains methane gas, which gives it its color.')">
+            <img src="uranus.jpeg" alt="Uranus">
+            <h3>Uranus</h3>
+        </div>
+
+        <div class="planet-card" onclick="openInfo('Neptune', '4.5 billion km', 'The farthest planet from the Sun. Known for very strong winds and storms. Deep blue in color because of methane gas. An ice giant similar to Uranus.')">
+            <img src="nepton.jpeg" alt="Neptune">
+            <h3>Neptune</h3>
+        </div>
+
+    </div>
+
+    <div id="modal-bg" onclick="closeInfo()"></div>
+
+    <div id="info-modal">
+        <h2 id="info-title"></h2>
+        <p id="info-dist"></p>
+        <p id="info-text"></p>
+        <button onclick="closeInfo()">CLOSE</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

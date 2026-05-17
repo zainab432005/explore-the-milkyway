@@ -1,0 +1,679 @@
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+body {
+    margin: 0;
+    padding: 0;
+    /* FIXED: Removed broken font-family syntax from original */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('main.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #05070a; /* fallback if image doesn't load */
+    color: white;
+    font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* ============================================
+   NAVIGATION BAR
+   ============================================ */
+.navbar {
+    background: rgba(18, 18, 30, 0.9);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 750px;
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+.navbar a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00c3ff;
+    text-shadow: 0 0 12px rgba(0, 195, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 20px;
+        border-radius: 20px;
+        width: 85%;
+    }
+    .navbar a {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   HERO SECTION (index.html)
+   ============================================ */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 9%;
+    background: transparent;
+}
+
+.hero h1 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(4rem, 10vw, 9rem);
+    margin: 0;
+    color: #00c3ff;
+    line-height: 0.85;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    text-shadow: 10px 10px 30px rgba(0, 0, 0, 1);
+    filter: drop-shadow(0 0 15px rgba(0, 195, 255, 0.4));
+}
+
+.hero-info {
+    margin-top: 30px;
+    max-width: 650px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
+    border-left: 6px solid #00c3ff;
+    color: #e0e0e0;
+}
+
+/* ============================================
+ HOME IMAGE GALLERY (index.html)
+   ============================================ */
+.home-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 60px 9%;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.home-img-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 195, 255, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.home-img-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 195, 255, 0.3);
+}
+
+.home-img-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.home-img-card:hover img {
+    transform: scale(1.05);
+}
+
+.home-img-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: #fff;
+    padding: 20px 16px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ============================================
+   EXTRA CONTENT SECTION (index.html)
+   ============================================ */
+.extra-content {
+    padding: 80px 9%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #f0f0f0;
+}
+
+.extra-content h2 {
+    font-size: 2.5rem;
+    color: #00c3ff;
+    margin-bottom: 20px;
+}
+.extra-content p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #ccc;
+    max-width: 900px;
+}
+
+/* ============================================
+     FACTS SECTION (index.html)
+   ============================================ */
+.facts-section {
+    padding: 80px 9%;
+    background: rgba(5, 10, 20, 0.9);
+    text-align: center;
+}
+
+.facts-section h2 {
+    font-size: 2.5rem;
+    color: #00c3ff;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.fact-card {
+    background: rgba(18, 24, 38, 0.85);
+    border: 1px solid rgba(0, 195, 255, 0.15);
+    border-radius: 18px;
+    padding: 35px 25px;
+    transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.fact-card:hover {
+    transform: translateY(-8px);
+    border-color: #00c3ff;
+}
+
+.fact-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.fact-card h3 {
+    color: #00c3ff;
+    font-size: 1.3rem;
+    margin: 0 0 10px;
+}
+
+.fact-card p {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ============================================
+   FOOTER (all pages)
+   ============================================ */
+.site-footer {
+    background: rgba(5, 7, 15, 0.98);
+    border-top: 1px solid rgba(0, 195, 255, 0.15);
+    padding: 60px 9% 0;
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-brand .footer-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #00c3ff;
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.footer-brand p,
+.footer-credit p {
+    color: #6b7280;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.footer-links h4,
+.footer-credit h4 {
+    color: #ffffff;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00c3ff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 20px 0;
+    text-align: center;
+    color: #4b5563;
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   COMPARE PAGE (compare.html)
+   ============================================ */
+#compare-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#compare-page .split-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3.5rem;
+    max-width: 1250px;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+#compare-page .planet-section {
+    flex: 1;
+    min-width: 350px;
+    max-width: 520px;
+    background: rgba(18, 18, 30, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#compare-page .planet-section:hover { transform: translateY(-12px); }
+#compare-page .planet-section:first-of-type:hover {
+    box-shadow: 0 20px 50px rgba(0, 195, 255, 0.2);
+    border-color: #00c3ff;
+}
+#compare-page .planet-section:last-of-type:hover {
+    box-shadow: 0 20px 50px rgba(255, 87, 34, 0.2);
+    border-color: #ff5722;
+}
+
+#compare-page .planet-section h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+#compare-page .planet-section:first-of-type h2 {
+    color: #00c3ff;
+    text-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
+}
+#compare-page .planet-section:last-of-type h2 {
+    color: #ff5722;
+    text-shadow: 0 0 10px rgba(255, 87, 34, 0.3);
+}
+
+#compare-page .image-frame {
+    width: 100%;
+    height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 1.8rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s;
+}
+#compare-page .image-frame:hover { transform: scale(1.03); }
+#compare-page .image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s;
+}
+#compare-page .image-frame:hover img { filter: brightness(1.15); }
+
+#compare-page .video-wrapper {
+    width: 100%;
+    margin-bottom: 1.8rem;
+}
+#compare-page .video-wrapper video {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+#compare-page .video-wrapper video:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+#compare-page .planet-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #9ca3af;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#compare-page .btn-details {
+    background: #00d2ff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+    transition: 0.3s;
+    margin-top: auto;
+}
+#compare-page .btn-details:hover { background: white; }
+
+@media (max-width: 768px) {
+    #compare-page .split-container { gap: 2rem; }
+}
+
+/* ============================================
+   SOLAR SYSTEM PAGE (solar system.html)
+   ============================================ */
+.main-title {
+    text-align: center;
+    margin-top: 130px;
+    margin-bottom: 40px;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    color: #00c3ff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.planets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    padding: 0 50px 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.planet-card {
+    background: rgba(18, 24, 38, 0.8);
+    border: 1px solid #1a1d24;
+    border-radius: 18px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s, box-shadow 0.3s;
+}
+.planet-card:hover {
+    transform: translateY(-12px);
+    border-color: #00c3ff;
+    box-shadow: 0 12px 30px rgba(0, 195, 255, 0.25);
+}
+.planet-card img {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+.planet-card h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #ffffff;
+}
+
+/* ============================================
+   SOLAR SYSTEM EXTRAS
+   ============================================ */
+.solar-subtitle {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: -20px 0 30px;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #9ca3af;
+    padding: 10px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: #00c3ff;
+    transition: width 0.3s ease;
+}
+
+.filter-btn:hover::before,
+.filter-btn.active-filter::before {
+    width: 100%;
+}
+
+.filter-btn:hover {
+    color: #fff;
+    border-color: rgba(0, 195, 255, 0.4);
+    background: rgba(0, 195, 255, 0.05);
+}
+
+.filter-btn.active-filter {
+    color: #00c3ff;
+    border-color: #00c3ff;
+    background: rgba(0, 195, 255, 0.08);
+    box-shadow: 0 0 18px rgba(0, 195, 255, 0.15);
+}
+
+.planet-tag {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.star-tag  { background: rgba(255, 200, 0, 0.15); color: #ffc800; border: 1px solid #ffc800; }
+.inner-tag { background: rgba(0, 195, 255, 0.1);  color: #00c3ff; border: 1px solid #00c3ff; }
+.outer-tag { background: rgba(180, 100, 255, 0.1); color: #b464ff; border: 1px solid #b464ff; }
+
+.modal-emoji {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#modal-planet-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(0, 195, 255, 0.4);
+    box-shadow: 0 0 25px rgba(0, 195, 255, 0.25);
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-dist {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.modal-dist span {
+    color: #00d2ff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.modal-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 16px 0 6px;
+    padding: 14px;
+    background: rgba(0, 195, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 195, 255, 0.1);
+}
+
+.modal-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.modal-stat span:last-child {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* ============================================
+   MODAL (shared across pages)
+   ============================================ */
+#modal-bg {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2000;
+}
+
+#info-modal {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #0f121a;
+    padding: 40px;
+    border-radius: 20px;
+    z-index: 2001;
+    border: 1px solid #00d2ff;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    color: white;
+    box-shadow: 0 0 25px rgba(0,210,255,0.3);
+}
+
+#info-title, #planet-name-label {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #00c3ff;
+}
+
+#info-dist, #planet-dist-label {
+    color: #00d2ff;
+    font-weight: bold;
+}
+
+#info-text {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+#info-modal button {
+    background: #00d2ff;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: 0.3s;
+    color: #000;
+}
+#info-modal button:hover { background: white; }

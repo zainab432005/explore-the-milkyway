@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth vs Mars | Space Explorer</title>
+    <!-- CSS file link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="compare-page">
+
+ <!-- Navigation bar -->
+    <nav class="navbar" aria-label="Main navigation">
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="compare.html">Planets</a>
+        <a href="planet.html">Solar System</a>
+    </nav>
+
+    <main id="main-content">
+
+        <section aria-labelledby="compare-heading">
+            <h1 id="compare-heading" class="main-title" style="margin-top:130px;">EARTH VS MARS</h1>
+            <div class="split-container">
+                <div class="planet-section">
+                    <h2>PLANET EARTH</h2>
+                    <div class="image-frame">
+
+                        <img src="earth.jpeg" alt="Planet Earth seen from space, showing blue oceans and green landmasses">
+                    </div>
+                    <div class="video-wrapper">
+
+                        <video controls aria-label="Video about Planet Earth">
+                            <source src="Earth.mp4" type="video/mp4">
+
+                            Your browser does not support the video element.
+                        </video>
+                    </div>
+                    <p>The only planet known to harbor life and liquid water.</p>                
+                </div>
+                <div class="planet-section">
+                    <h2>PLANET MARS</h2>
+                    <div class="image-frame">
+
+                        <img src="mars.jpeg" alt="Planet Mars seen from space, showing its distinctive red rocky surface">
+                    </div>
+                    <div class="video-wrapper">
+
+                        <video controls aria-label="Video about Planet Mars">
+                            <source src="mars.mp4" type="video/mp4">
+                            Your browser does not support the video element.
+                        </video>
+                    </div>
+                    <p>The Red Planet, home to the tallest mountain in the solar system.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal-bg" aria-hidden="true"></div>
+    <div id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title" aria-hidden="true">
+        <h3 id="info-title"></h3>
+        <div id="info-dist"></div>
+        <div id="info-text"></div>
+
+        <button onclick="closeInfo()" aria-label="Close planet details">Close</button>
+    </div>
+
+   <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <!-- Website branding -->
+            <div class="footer-brand">
+                <span class="footer-logo"><span aria-hidden="true">🌌</span> Space Explorer</span>
+                <p>Exploring the universe, one star at a time.</p>
+            </div>
+            
+            <!-- Footer links -->
+            <nav class="footer-links" aria-label="Footer navigation">
+                <h4>Pages</h4>
+                <a href="index.html">Home</a>
+                <a href="compare.html">Planets</a>
+                <a href="planet.html">Solar System</a>
+            </nav>
+
+            <!-- About section -->
+            <div class="footer-credit">
+                <h4>About</h4>
+                <p>A student project dedicated to the wonders of our universe and the science behind it.</p>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>© 2026 Space Explorer. Made with <span aria-hidden="true">❤️</span>.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
